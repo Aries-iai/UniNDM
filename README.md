@@ -64,20 +64,15 @@ mode: Defines the operational mode of the UniNDM framework.
 
 - 'M' (Mitigate): Directly applies mitigation without prior detection.
 
-**Example:** Running in 'Detect-then-Mitigate' mode on the 'I2P' dataset on SDXL
-```bash
-cd UNET
-python run_sdxl.py --dataset I2P --mode DM
-```
 
 ### 3. Path Configuration
 
 1) Model Path
-Please edit the following files to set the path variables (e.g., SD14_VERSION or SD15_VERSION in run_sd1.py), specifying the path to your base Text-to-Image models (local or remote).
+Please edit the following files to set the path variables (e.g., SD14_VERSION in run_sd1.py), specifying the path to your base Text-to-Image models (local or remote).
 
 2) Noise Sets Path
 
-For the detection model, two training noise sets are required.
+For the detection model, two noise sets (benign and sexual) are required.
 
     - Location: 'save_latent_folder' in run_{}.py
 
@@ -101,6 +96,11 @@ python run_sd3.py --dataset <dataset_name> --mode <mode_name>
 
 Where `{version}` corresponds to `14`, `15`, `2`, or `xl` respectively. Replace `<dataset_name>` and `<mode_name>` with your actual configuration values.
 
+**Example:** Running in 'Detect-then-Mitigate' mode on the 'I2P' dataset on SDXL
+```bash
+cd UNET
+python run_sdxl.py --dataset I2P --mode DM
+```
 
 ## 🍎 Contributing
 
