@@ -1,6 +1,4 @@
-# UniNDM
-UniNDM: A Unified Noise-driven Detection and Mitigation Framework Against Sexual Content in Text-to-Image Generation
-
+# UniNDM: A Unified Noise-driven Detection and Mitigation Framework Against Sexual Content in Text-to-Image Generation
 
 <div align="center">
     <img src="statics/cover.png" alt="background" style="width: 90%;"> 
@@ -9,7 +7,6 @@ UniNDM: A Unified Noise-driven Detection and Mitigation Framework Against Sexual
 
 ## 📖 Overview
 **UniNDM** is a light-weight noise-driven framework capable of detecting and mitigating both explicit and implicit sexual intention in Text-to-Image (T2I) generation.
-
 We uncover two key insights into noises for safe T2I generation:
 
 **The Separability of Early-Stage Predicted Noises:** Allowing for efficient detection.
@@ -88,34 +85,35 @@ For the detection model, two training noise sets are required.
 
 ## ✨ Running UniNDM Framework
 
-### SDv1.4
+Run the framework with different Stable Diffusion versions using the following command pattern:
+
+**For SD v1.4/v1.5/v2.1/SDXL:**
 ```bash
 cd UNET
-python run_sd14.py --dataset xx --mode xx
-```
-### SDv1.5
-```bash
-cd UNET
-python run_sd15.py --dataset xx --mode xx
+python run_sd{version}.py --dataset <dataset_name> --mode <mode_name>
 ```
 
-### SDv2.1
-```bash
-cd UNET
-python run_sd2.py --dataset xx --mode xx
-```
-
-### SDXL
-```bash
-cd UNET
-python run_sdxl.py --dataset xx --mode xx
-```
-
-### SDv3
+**For SD v3:**
 ```bash
 cd DIT
-python run_sd3.py --dataset xx --mode xx
+python run_sd3.py --dataset <dataset_name> --mode <mode_name>
 ```
 
-## Contributing
+Where `{version}` corresponds to `14`, `15`, `2`, or `xl` respectively. Replace `<dataset_name>` and `<mode_name>` with your actual configuration values.
+
+
+## 🍎 Contributing
+
 We welcome contributions! Please submit issues or pull requests for bug fixes, features, or documentation enhancements.
+
+## :black_nib: Citation
+If you find our work helpful for your research, please consider citing our conference version first, and our journal version will be updated soon.
+
+```bibtex
+@inproceedings{sun2025ndm,
+  title={NDM: A Noise-driven Detection and Mitigation Framework against Implicit Sexual Intentions in Text-to-Image Generation},
+  author={Sun, Yitong and Huang, Yao and Zhang, Ruochen and Chen, Huanran and Ruan, Shouwei and Duan, Ranjie and Wei, Xingxing},
+  booktitle={Proceedings of the 33rd ACM International Conference on Multimedia},
+  pages={11462--11471},
+  year={2025}
+}
